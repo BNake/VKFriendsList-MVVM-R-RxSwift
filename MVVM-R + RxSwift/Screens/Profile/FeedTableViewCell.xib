@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="539" id="KGk-i7-Jjw" customClass="FeedTableViewCell" customModule="MVVM_R___RxSwift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="324" height="539"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="324" height="538.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40Q-AD-K2l">
+                        <rect key="frame" x="16" y="101" width="302" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Guf" translatesAutoresizingMaskIntoConstraints="NO" id="CXF-4n-yfY">
+                        <rect key="frame" x="16" y="31" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="TC0-Jz-wz4"/>
+                            <constraint firstAttribute="height" constant="60" id="zHu-4r-yIl"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Алексей Долматов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ga-SE-eAc">
+                        <rect key="frame" x="86" y="31" width="119" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13 июня 2016г." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDK-Bp-dO3">
+                        <rect key="frame" x="86" y="52" width="86.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.38409786260000001" green="0.38790081170000001" blue="0.38790081170000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="fte-th-h4z">
+                        <rect key="frame" x="16" y="131.5" width="292" height="331.5"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KQe-rW-R4p">
+                            <size key="itemSize" width="304" height="400"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Exh-WN-UII">
+                        <rect key="frame" x="16" y="493" width="292" height="30"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="INu-m0-sH6">
+                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="30"/>
+                                <state key="normal" title="48" image="Сердце">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lkw-B0-1h1">
+                                <rect key="frame" x="113.5" y="0.0" width="51" height="30"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rtw-Q9-mjk">
+                                <rect key="frame" x="184.5" y="0.0" width="107.5" height="30"/>
+                                <state key="normal" title=" 7" image="Мегафон">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="EfX-Zm-ax3"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="40Q-AD-K2l" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="10" id="1lF-PG-0a9"/>
+                    <constraint firstItem="IDK-Bp-dO3" firstAttribute="leading" secondItem="CXF-4n-yfY" secondAttribute="trailing" constant="10" id="BQm-ed-ckz"/>
+                    <constraint firstItem="CXF-4n-yfY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Bim-04-kbJ"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Exh-WN-UII" secondAttribute="bottom" constant="5" id="HRW-bu-goM"/>
+                    <constraint firstItem="fte-th-h4z" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="NnJ-OO-qYQ"/>
+                    <constraint firstItem="2Ga-SE-eAc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="QPO-MX-0pT"/>
+                    <constraint firstItem="IDK-Bp-dO3" firstAttribute="top" secondItem="2Ga-SE-eAc" secondAttribute="bottom" constant="5" id="Rp2-8m-Pxa"/>
+                    <constraint firstItem="40Q-AD-K2l" firstAttribute="top" secondItem="CXF-4n-yfY" secondAttribute="bottom" constant="10" id="SFs-Vw-mO5"/>
+                    <constraint firstItem="Exh-WN-UII" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="T3Y-J2-3Wj"/>
+                    <constraint firstItem="fte-th-h4z" firstAttribute="top" secondItem="40Q-AD-K2l" secondAttribute="bottom" constant="10" id="Zgz-Gr-re5"/>
+                    <constraint firstItem="CXF-4n-yfY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="eFn-vf-6sQ"/>
+                    <constraint firstItem="40Q-AD-K2l" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="fJP-EA-v6g"/>
+                    <constraint firstItem="2Ga-SE-eAc" firstAttribute="leading" secondItem="CXF-4n-yfY" secondAttribute="trailing" constant="10" id="mlk-mM-CnW"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Exh-WN-UII" secondAttribute="trailing" id="rMW-nz-Kct"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="fte-th-h4z" secondAttribute="trailing" id="rgE-Cb-YqL"/>
+                    <constraint firstItem="Exh-WN-UII" firstAttribute="top" secondItem="fte-th-h4z" secondAttribute="bottom" constant="30" id="wdv-Ef-ODP"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="dateLabel" destination="IDK-Bp-dO3" id="gza-pu-R5o"/>
+                <outlet property="fullNameLabel" destination="2Ga-SE-eAc" id="WNh-QG-bl8"/>
+                <outlet property="likeButton" destination="INu-m0-sH6" id="lIR-k2-WYW"/>
+                <outlet property="photoCollectionView" destination="fte-th-h4z" id="4qX-s3-M6G"/>
+                <outlet property="photoImageView" destination="CXF-4n-yfY" id="C81-IH-Cqf"/>
+                <outlet property="repostButton" destination="Rtw-Q9-mjk" id="WyC-G7-MEk"/>
+                <outlet property="titleLabel" destination="40Q-AD-K2l" id="dPc-XA-XTv"/>
+            </connections>
+            <point key="canvasLocation" x="-226" y="199.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Guf" width="200" height="200"/>
+        <image name="Мегафон" width="32" height="32"/>
+        <image name="Сердце" width="32" height="32"/>
+    </resources>
+</document>
