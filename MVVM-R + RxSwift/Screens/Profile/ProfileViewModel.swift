@@ -31,15 +31,24 @@ class ProfileViewModel: Routable {
     var onlineStatus = BehaviorSubject(value: "")
     var city = BehaviorSubject(value: "")
     
-    let feed: Driver<[FeedCellViewModel]>
+    var feed = BehaviorSubject(value: [FeedCellViewModel]())
     
     init(networkService: NetworkManager, id: Int) {
         self.networkService = networkService
         self.id = id
         
-        self.feed = networkService.getFeed(id: id)
-            .map { feeds in return feeds.map { FeedCellViewModel(feed: $0) } }
-            .asDriver(onErrorJustReturn: [])
+        networkService.getFeed(id: id).subscribe { feedResponse in
+            guard let feedResponse = feedResponse.element else { return }
+            var feedArray = [FeedCellViewModel]()
+            feedResponse.response?.items?.forEach{ feed in
+                let owner = feedResponse.response?.profiles?.filter{$0.id == feed.fromID}.first
+                let name = (owner?.firstName ?? "Хуй") + " " + (owner?.lastName ?? "Болотный")
+                feedArray.append(FeedCellViewModel(feed: feed, ownerName: name , ownerPhoto: owner?.photo100 ?? ""))
+            }
+            
+            self.feed.onNext(feedArray)
+            
+        }.disposed(by: disposeBag)
         
         networkService.getProfile(id: id).map{$0.first!}.subscribe { profile in
             guard let profile = profile.element else { return }

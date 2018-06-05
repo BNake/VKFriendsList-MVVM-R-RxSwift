@@ -12,13 +12,13 @@ import Foundation
 struct FeedResponse: Codable {
     let response: FeedResp?
     let error: ResponseError?
-    let profiles: [ProfileFeed]?
-    let groups: [GroupFeed]?
 }
 
 struct FeedResp: Codable {
     let count: Int?
     let items: [Feed]?
+    let profiles: [ProfileFeed]?
+    let groups: [GroupFeed]?
 }
 
 struct Feed: Codable {

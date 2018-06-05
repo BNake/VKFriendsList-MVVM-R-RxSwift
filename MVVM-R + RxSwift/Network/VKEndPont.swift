@@ -60,8 +60,9 @@ extension VKApi: EndPointType{
         case .getFeed(let id):
             let urlParameters: Parameters = ["access_token": token,
                                              "v": "\(VKConstants.version)",
-                                                "owner_id": id,
-                                                "offset": 0]
+                                             "owner_id": id,
+                                             "offset": 0,
+                                             "extended": 1]
             
             //TODO: offset
             

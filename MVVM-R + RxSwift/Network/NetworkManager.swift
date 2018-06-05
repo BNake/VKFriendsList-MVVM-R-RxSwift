@@ -84,8 +84,8 @@ struct NetworkManager {
         }
     }
     
-    func getFeed(id: Int) -> Observable<[Feed]> {
-        return Observable<[Feed]>.create { observable in
+    func getFeed(id: Int) -> Observable<FeedResponse> {
+        return Observable<FeedResponse>.create { observable in
             self.router.request(.getFeed(id: id)) { (data, response, error) in
                 guard error == nil else { observable.onError("Please check your network connection." as! Error); return }
                 guard let response = response as? HTTPURLResponse else { observable.onError("Fail create response" as! Error); return }
@@ -94,12 +94,14 @@ struct NetworkManager {
                 case .success:
                     guard let responseData = data else { observable.onError(NetworkResponse.noData.rawValue as! Error); return }
                     do {
+                        let json = try JSONSerialization.jsonObject(with: data!, options: [])
+                        print(json)
                         let apiResponse = try JSONDecoder().decode(FeedResponse.self, from: responseData)
                         if let errorResponse = apiResponse.error{
                             guard let errorMsg = errorResponse.errorMsg else { return }
                             observable.onError(errorMsg as! Error)
                         }else{
-                            observable.onNext((apiResponse.response?.items)!)
+                            observable.onNext(apiResponse)
                         }
                     }catch {
                         observable.onError(NetworkResponse.unableToDecode.rawValue as! Error)

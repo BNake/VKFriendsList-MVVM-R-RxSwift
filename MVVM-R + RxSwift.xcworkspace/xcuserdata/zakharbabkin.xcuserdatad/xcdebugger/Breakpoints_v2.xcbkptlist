@@ -13,5 +13,69 @@
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MVVM-R + RxSwift/Network/NetworkManager.swift"
+            timestampString = "549923250.967598"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "getFeed(id:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MVVM-R + RxSwift/Screens/Profile/ProfileViewModel.swift"
+            timestampString = "549923250.967698"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "init(networkService:id:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (MVVM_R___RxSwift.Feed) -&gt; () in closure #1 (RxSwift.Event&lt;MVVM_R___RxSwift.FeedResponse&gt;) -&gt; () in MVVM_R___RxSwift.ProfileViewModel.init(networkService: MVVM_R___RxSwift.NetworkManager, id: Swift.Int) -&gt; MVVM_R___RxSwift.ProfileViewModel"
+                  moduleName = "MVVM-R + RxSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zakharbabkin/Desktop/VKFriendsList-MVVM-R-RxSwift/MVVM-R%20+%20RxSwift/Screens/Profile/ProfileViewModel.swift"
+                  timestampString = "549923134.64623"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "881">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (MVVM_R___RxSwift.ProfileFeed) -&gt; Swift.Bool in closure #1 (MVVM_R___RxSwift.Feed) -&gt; () in closure #1 (RxSwift.Event&lt;MVVM_R___RxSwift.FeedResponse&gt;) -&gt; () in MVVM_R___RxSwift.ProfileViewModel.init(networkService: MVVM_R___RxSwift.NetworkManager, id: Swift.Int) -&gt; MVVM_R___RxSwift.ProfileViewModel"
+                  moduleName = "MVVM-R + RxSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zakharbabkin/Desktop/VKFriendsList-MVVM-R-RxSwift/MVVM-R%20+%20RxSwift/Screens/Profile/ProfileViewModel.swift"
+                  timestampString = "549923134.649454"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "490">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

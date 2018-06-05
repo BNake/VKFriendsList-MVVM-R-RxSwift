@@ -43,15 +43,15 @@ class ProfileViewController: UIViewController {
         messageButton.rounding()
         friendListButton.rounding()
         
-        profileView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 400)
-        self.view.addSubview(profileView)
+        profileView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 200)
+        self.tableView.tableHeaderView = profileView
         
-//        let cellNib = UINib(nibName: String(describing: FeedTableViewCell.self), bundle: nil)
-//        tableView.register(cellNib, forCellReuseIdentifier: "FeedCell")
-//
-//        viewModel.feed.drive(tableView.rx.items(cellIdentifier: "FeedCell", cellType: FeedTableViewCell.self)) { (row, feed, cell) in
-//            cell.setup(with: feed)
-//            }.disposed(by: disposeBag)
+        let cellNib = UINib(nibName: String(describing: FeedTableViewCell.self), bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: "FeedCell")
+
+        viewModel.feed.bind(to: tableView.rx.items(cellIdentifier: "FeedCell", cellType: FeedTableViewCell.self)) { (row, feed, cell) in
+            cell.setup(with: feed)
+            }.disposed(by: disposeBag)
         
         
         viewModel.photo.bind(to: photoImageView.rx.image).disposed(by: disposeBag)

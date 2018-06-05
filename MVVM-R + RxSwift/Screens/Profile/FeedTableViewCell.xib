@@ -111,7 +111,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Guf" width="200" height="200"/>
+        <image name="Guf" width="290" height="290"/>
         <image name="Мегафон" width="32" height="32"/>
         <image name="Сердце" width="32" height="32"/>
     </resources>
