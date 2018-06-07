@@ -13,13 +13,14 @@ class FeedTableViewCell: UITableViewCell {
     
     private var disposeBag = DisposeBag()
     
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var repostButton: UIButton!
-    @IBOutlet weak var photoCollectionView: UICollectionView!
+    @IBOutlet weak var feedImageView: UIImageView!
     
     func setup(with viewModel: FeedCellViewModel){
         photoImageView.rounding()
@@ -34,17 +35,26 @@ class FeedTableViewCell: UITableViewCell {
         likeButton.setTitle(viewModel.likesCount, for: .normal)
         repostButton.setTitle(viewModel.repostCount, for: .normal)
         
-        
-        let cellNib = UINib(nibName: String(describing: PhotoCollectionViewCell.self), bundle: nil)
-        photoCollectionView.register(cellNib, forCellWithReuseIdentifier: "PhotoCell")
-        
-        viewModel.image.map{$0.isEmpty}.bind(to: photoCollectionView.rx.isHidden).disposed(by: disposeBag)
-        
-        viewModel.image.bind(to: photoCollectionView.rx.items(cellIdentifier: "PhotoCell", cellType: PhotoCollectionViewCell.self)) { row, photo, cell in
-            cell.frame.size = photo.size
-            cell.photoImageView.image = photo
-        }.disposed(by: disposeBag)
-        
+//        viewModel.images.subscribe { images in
+//            guard let images = images.element else { return }
+//            self.stackView.arrangedSubviews.filter{$0 == UIImageView() && $0 != self.feedImageView}.forEach{self.stackView.removeArrangedSubview($0)}
+//            
+//            var imageViewArray = [UIImageView]()
+//            
+//            images.forEach { image in
+//                let imageView = UIImageView()
+//                imageView.contentMode = .scaleAspectFit
+//                imageView.frame.size = image.size
+//                imageView.image = image
+//                imageViewArray.append(imageView)
+//                //self.stackView.insertSubview(self.titleLabel, aboveSubview: imageView)
+//            }
+//            
+//            let stackView = UIStackView()
+//            stackView.distribution = .fillProportionally
+//            imageViewArray.forEach{stackView.addArrangedSubview($0)}
+//            self.stackView.insertArrangedSubview(stackView, at: 2)
+//            }.disposed(by: disposeBag)
     }
     
     override func prepareForReuse() {

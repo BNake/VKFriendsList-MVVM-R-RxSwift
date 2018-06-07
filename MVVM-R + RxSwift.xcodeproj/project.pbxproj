@@ -20,12 +20,11 @@
 		363A36E720C47AEE0073C912 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363A36E520C47AEE0073C912 /* FeedTableViewCell.swift */; };
 		363A36E820C47AEE0073C912 /* FeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 363A36E620C47AEE0073C912 /* FeedTableViewCell.xib */; };
 		363A36EA20C4B0640073C912 /* FeedCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363A36E920C4B0640073C912 /* FeedCellViewModel.swift */; };
-		363A36ED20C4BD820073C912 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363A36EB20C4BD820073C912 /* PhotoCollectionViewCell.swift */; };
-		363A36EE20C4BD820073C912 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 363A36EC20C4BD820073C912 /* PhotoCollectionViewCell.xib */; };
 		3679C44920C691920066689B /* VKEndPont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3679C44820C691920066689B /* VKEndPont.swift */; };
 		3679C44D20C694D30066689B /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3679C44B20C694D30066689B /* AuthorizationViewController.swift */; };
 		3679C44E20C694D30066689B /* AuthorizationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3679C44C20C694D30066689B /* AuthorizationViewController.xib */; };
 		3679C45120C697A80066689B /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3679C45020C697A80066689B /* Keychain.swift */; };
+		36E4EFC920C759DD007EBFDE /* Int+UnixTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E4EFC820C759DD007EBFDE /* Int+UnixTime.swift */; };
 		36EC9E0620C69B5B0058B10E /* URL+Token+Id.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EC9E0520C69B5B0058B10E /* URL+Token+Id.swift */; };
 		36EC9E0820C69C450058B10E /* AuthorizationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EC9E0720C69C450058B10E /* AuthorizationRouter.swift */; };
 		36FEEDBB20C18E1800419E76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FEEDBA20C18E1800419E76 /* AppDelegate.swift */; };
@@ -69,12 +68,11 @@
 		363A36E520C47AEE0073C912 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		363A36E620C47AEE0073C912 /* FeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTableViewCell.xib; sourceTree = "<group>"; };
 		363A36E920C4B0640073C912 /* FeedCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCellViewModel.swift; sourceTree = "<group>"; };
-		363A36EB20C4BD820073C912 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
-		363A36EC20C4BD820073C912 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		3679C44820C691920066689B /* VKEndPont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKEndPont.swift; sourceTree = "<group>"; };
 		3679C44B20C694D30066689B /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		3679C44C20C694D30066689B /* AuthorizationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorizationViewController.xib; sourceTree = "<group>"; };
 		3679C45020C697A80066689B /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		36E4EFC820C759DD007EBFDE /* Int+UnixTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+UnixTime.swift"; sourceTree = "<group>"; };
 		36EC9E0520C69B5B0058B10E /* URL+Token+Id.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Token+Id.swift"; sourceTree = "<group>"; };
 		36EC9E0720C69C450058B10E /* AuthorizationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationRouter.swift; sourceTree = "<group>"; };
 		36FEEDB720C18E1800419E76 /* MVVM-R + RxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM-R + RxSwift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,8 +151,6 @@
 				363A36E620C47AEE0073C912 /* FeedTableViewCell.xib */,
 				363A36E520C47AEE0073C912 /* FeedTableViewCell.swift */,
 				363A36E920C4B0640073C912 /* FeedCellViewModel.swift */,
-				363A36EC20C4BD820073C912 /* PhotoCollectionViewCell.xib */,
-				363A36EB20C4BD820073C912 /* PhotoCollectionViewCell.swift */,
 				36050C4F20C66F4B0090343B /* ProfileRouter.swift */,
 			);
 			path = Profile;
@@ -281,6 +277,7 @@
 				36FEEDE020C1954900419E76 /* Image+URL.swift */,
 				363A36E120C45D130073C912 /* View+Radius.swift */,
 				36EC9E0520C69B5B0058B10E /* URL+Token+Id.swift */,
+				36E4EFC820C759DD007EBFDE /* Int+UnixTime.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -353,7 +350,6 @@
 				36FEEDC520C18E1800419E76 /* LaunchScreen.storyboard in Resources */,
 				363A36E820C47AEE0073C912 /* FeedTableViewCell.xib in Resources */,
 				3679C44E20C694D30066689B /* AuthorizationViewController.xib in Resources */,
-				363A36EE20C4BD820073C912 /* PhotoCollectionViewCell.xib in Resources */,
 				36FEEE3D20C1EB7F00419E76 /* FriendTableViewCell.xib in Resources */,
 				36FEEDC220C18E1800419E76 /* Assets.xcassets in Resources */,
 			);
@@ -442,7 +438,6 @@
 				36FEEE2A20C1A9D900419E76 /* EndPointType.swift in Sources */,
 				36FEEDD820C1920F00419E76 /* Friend.swift in Sources */,
 				363A36DC20C4440B0073C912 /* ProfileViewModel.swift in Sources */,
-				363A36ED20C4BD820073C912 /* PhotoCollectionViewCell.swift in Sources */,
 				36FEEDDE20C1930C00419E76 /* FriendCellViewModel.swift in Sources */,
 				36FEEE2E20C1A9D900419E76 /* HTTPTask.swift in Sources */,
 				363A36EA20C4B0640073C912 /* FeedCellViewModel.swift in Sources */,
@@ -453,6 +448,7 @@
 				36FEEE5620C29F2B00419E76 /* Profile.swift in Sources */,
 				36050C5020C66F4B0090343B /* ProfileRouter.swift in Sources */,
 				36FEEE2C20C1A9D900419E76 /* JSONParameterEncoder.swift in Sources */,
+				36E4EFC920C759DD007EBFDE /* Int+UnixTime.swift in Sources */,
 				363A36D520C440630073C912 /* ProfileViewController.swift in Sources */,
 				363A36E420C47A850073C912 /* Feed.swift in Sources */,
 				36EC9E0620C69B5B0058B10E /* URL+Token+Id.swift in Sources */,

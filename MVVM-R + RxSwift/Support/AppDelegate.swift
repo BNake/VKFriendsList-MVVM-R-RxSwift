@@ -12,24 +12,10 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
-    private let startViewController: UINavigationController = {
-        let keychain = Keychain()
-        let authViewController = AuthorizationViewController(keychain: keychain)
-        let navigationController = UINavigationController.init(rootViewController: authViewController)
-        
-        let router = AuthorizationRouter()
-        router.context = navigationController
-        authViewController.router = router
-        
-        return navigationController
-    }()
-    
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
-        self.window?.rootViewController = startViewController
+        self.window?.rootViewController = createStartViewController()
         self.window?.makeKeyAndVisible()
         
         return true
@@ -44,6 +30,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return false
+    }
+    
+    func createStartViewController() -> UIViewController {
+        let keychain = Keychain()
+        if keychain.load(.token) != nil, let idString = keychain.load(.id), let id = Int(idString) {
+            let network = NetworkManager()
+            let viewModel = FriendListViewModel(networkService: network, id: id)
+            let friendLiewController = FriendListViewController(viewModel: viewModel)
+            
+            let navigationController = UINavigationController.init(rootViewController: friendLiewController)
+            let router = FriendListRouter()
+            router.context = navigationController
+            viewModel.router = router
+            
+            return navigationController
+        } else {
+            let keychain = Keychain()
+            let authViewController = AuthorizationViewController(keychain: keychain)
+            let navigationController = UINavigationController.init(rootViewController: authViewController)
+            
+            let router = AuthorizationRouter()
+            router.context = navigationController
+            authViewController.router = router
+            
+            return navigationController
+        }
     }
 }
 

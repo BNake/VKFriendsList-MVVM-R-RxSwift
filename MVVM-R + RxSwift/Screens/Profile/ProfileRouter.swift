@@ -20,6 +20,7 @@ class ProfileRouter: Router {
         case .detail(let photo):
             let detailPhotoViewController = DetailPhotoViewController(photo: photo)
             context?.pushViewController(detailPhotoViewController, animated: true)
+            
         case .friendList(let id):
             let network = NetworkManager()
             let viewModel = FriendListViewModel(networkService: network, id: id)
@@ -30,6 +31,16 @@ class ProfileRouter: Router {
             let router = FriendListRouter()
             router.context = context
             viewModel.router = router
+            
+        case .profile(let id):
+            let network = NetworkManager()
+            let profileViewModel = ProfileViewModel(networkService: network, id: id)
+            let profileViewController = ProfileViewController(viewModel: profileViewModel)
+            context?.pushViewController(profileViewController, animated: true)
+            
+            let router = ProfileRouter()
+            router.context = context
+            profileViewModel.router = router
         }
     }
 }

@@ -61,7 +61,7 @@ extension VKApi: EndPointType{
             let urlParameters: Parameters = ["access_token": token,
                                              "v": "\(VKConstants.version)",
                                              "owner_id": id,
-                                             "offset": 0,
+                                             "count": 4,
                                              "extended": 1]
             
             //TODO: offset

@@ -18,6 +18,7 @@ class ProfileViewModel: Routable {
     enum Routes {
         case detail(photo: [UIImage])
         case friendList(id: Int)
+        case profile(id: Int)
     }
     
     
@@ -33,6 +34,16 @@ class ProfileViewModel: Routable {
     
     var feed = BehaviorSubject(value: [FeedCellViewModel]())
     
+    var viewModelSelected: Driver<FeedCellViewModel>! {
+        didSet {
+            if let viewModelSelected = self.viewModelSelected {
+                viewModelSelected.map{$0.id}.filter{$0 != self.id}.drive(onNext: { [unowned self] id in
+                    self.router?.route(to: .profile(id: id))
+                }).disposed(by: disposeBag)
+            }
+        }
+    }
+    
     init(networkService: NetworkManager, id: Int) {
         self.networkService = networkService
         self.id = id
@@ -42,7 +53,7 @@ class ProfileViewModel: Routable {
             var feedArray = [FeedCellViewModel]()
             feedResponse.response?.items?.forEach{ feed in
                 let owner = feedResponse.response?.profiles?.filter{$0.id == feed.fromID}.first
-                let name = (owner?.firstName ?? "Хуй") + " " + (owner?.lastName ?? "Болотный")
+                let name = (owner?.firstName ?? "") + " " + (owner?.lastName ?? "")
                 feedArray.append(FeedCellViewModel(feed: feed, ownerName: name , ownerPhoto: owner?.photo100 ?? ""))
             }
             
@@ -66,12 +77,9 @@ class ProfileViewModel: Routable {
     func friendList(){
         self.router?.route(to: .friendList(id: id))
     }
-}
-
-
-struct readyProfile {
-    var photo: UIImage
-    var fullName: String
-    var onlineStatis: String
-    var city: String
+    
+    func profile(id: Int){
+        guard self.id != id else { return }
+        self.router?.route(to: .profile(id: id))
+    }
 }
