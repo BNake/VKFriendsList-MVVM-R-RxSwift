@@ -35,7 +35,6 @@ class AuthorizationViewController: UIViewController, Routable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginButton.radius(radius: 5)
         
         NotificationCenter.default.rx.notification(Notification.Name(rawValue: "safariControllerNotificationName")).bind { notification in
             guard let token = (notification.object as? URL)?.accessToken,
@@ -50,9 +49,9 @@ class AuthorizationViewController: UIViewController, Routable {
             })
         }.disposed(by: disposeBag)
         
-        
+        loginButton.radius(radius: 5)
         loginButton.rx.tap.subscribe { [weak self] _ in
-            guard let url = URL(string: "https://oauth.vk.com/authorize?client_id=\(VKConstants.applicationClientID)&redirect_uri=vk\(VKConstants.applicationClientID)://authorize&scope=friends,photos&display=mobile&response_type=token&v=\(VKConstants.version)") else {return}
+            guard let url = URL(string: VKConstants.url) else {return}
             
             self?.safariController = SFSafariViewController(url: url)
             self?.safariController?.delegate = self

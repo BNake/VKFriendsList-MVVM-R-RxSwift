@@ -34,27 +34,6 @@ class FeedTableViewCell: UITableViewCell {
         
         likeButton.setTitle(viewModel.likesCount, for: .normal)
         repostButton.setTitle(viewModel.repostCount, for: .normal)
-        
-//        viewModel.images.subscribe { images in
-//            guard let images = images.element else { return }
-//            self.stackView.arrangedSubviews.filter{$0 == UIImageView() && $0 != self.feedImageView}.forEach{self.stackView.removeArrangedSubview($0)}
-//            
-//            var imageViewArray = [UIImageView]()
-//            
-//            images.forEach { image in
-//                let imageView = UIImageView()
-//                imageView.contentMode = .scaleAspectFit
-//                imageView.frame.size = image.size
-//                imageView.image = image
-//                imageViewArray.append(imageView)
-//                //self.stackView.insertSubview(self.titleLabel, aboveSubview: imageView)
-//            }
-//            
-//            let stackView = UIStackView()
-//            stackView.distribution = .fillProportionally
-//            imageViewArray.forEach{stackView.addArrangedSubview($0)}
-//            self.stackView.insertArrangedSubview(stackView, at: 2)
-//            }.disposed(by: disposeBag)
     }
     
     override func prepareForReuse() {

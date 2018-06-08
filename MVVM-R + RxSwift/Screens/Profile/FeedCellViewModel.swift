@@ -28,12 +28,5 @@ class FeedCellViewModel {
         self.feed = feed
         self.fullName = ownerName
         self.photo = UIImage.getImage(link: ownerPhoto).asDriver(onErrorJustReturn: #imageLiteral(resourceName: "Guf"))
-        
-//        var imageLinkArray = [String]()
-//        feed.attachments?.filter{$0.type! == "photo"}.forEach{imageLinkArray.append(($0.photo?.photo604)!)}
-//        UIImage.getImageArray(links: imageLinkArray) { images in
-//            print("Добавил \(images.count)")
-//            self.images.onNext(images)
-//        }
     }
 }

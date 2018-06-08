@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailPhotoViewController: UIViewController {
+final class DetailPhotoViewController: UIViewController {
     
     private var photo: [UIImage]
     
@@ -28,16 +28,14 @@ class DetailPhotoViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        settingScrollView()
+    }
+    
+    private func settingScrollView() {
         scrollViewRect = self.view.bounds
         
-        //createScrollView
         scrollView = UIScrollView(frame: scrollViewRect)
         scrollView.isPagingEnabled = true
         scrollView.contentSize = CGSize(width: scrollViewRect.size.width * CGFloat(photo.count), height: scrollViewRect.size.height)
@@ -45,7 +43,6 @@ class DetailPhotoViewController: UIViewController {
         scrollView.delegate = self
         self.view.addSubview(scrollView)
         
-        //createImageViewInScrollView
         imageViewRect = self.view.bounds
         
         for image in photo {
@@ -56,7 +53,7 @@ class DetailPhotoViewController: UIViewController {
         }
     }
     
-    func newImageView(paramImage: UIImage, paramFrame: CGRect) -> UIImageView {
+    private func newImageView(paramImage: UIImage, paramFrame: CGRect) -> UIImageView {
         let result = UIImageView(frame: paramFrame)
         
         result.contentMode = .scaleAspectFit
