@@ -28,16 +28,16 @@ extension UIImage {
         }
     }
     
-    static func getImageArray(links: [String], completion: @escaping([UIImage]) -> ()){
-        var imageArray = [UIImage]()
-        
-            let _ = links.map({
-                if let imageData = try? Data(contentsOf: URL(string: $0)!) {
-                   imageArray.append(UIImage(data: imageData)!)
-                }
-            })
-        
-        completion(imageArray)
-        
-    }
+//    static func getImageArray(links: [String], completion: @escaping([UIImage]) -> ()){
+//        var imageArray = [UIImage]()
+//        
+//            let _ = links.map({
+//                if let imageData = try? Data(contentsOf: URL(string: $0)!) {
+//                   imageArray.append(UIImage(data: imageData)!)
+//                }
+//            })
+//        
+//        completion(imageArray)
+//        
+//    }
 }
